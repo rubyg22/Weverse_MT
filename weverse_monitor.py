@@ -109,6 +109,21 @@ def run_single_check():
     if result['new_sizes']:
         send_discord_alert(f"📏 NEW SIZES: {', '.join(result['new_sizes'])}")
 
+# =================================================================
+
+def run_single_check():
+    """Run one check and exit - for PythonAnywhere scheduled tasks"""
+    logging.info("Starting single check...")
+    
+    # 🧪 TEST: Force a Discord message
+    send_discord_alert("🧪 Test: Discord webhook is working!")
+    
+    result = check_product()
+    # ... rest of the function stays the same
+
+
+
+
 # ================= CONTINUOUS MONITORING VERSION =================
 def run_continuous():
     """Run continuous monitoring - for always-on tasks"""

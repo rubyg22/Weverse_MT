@@ -16,8 +16,8 @@ KNOWN_SIZES = ["M", "L", "XL", "XXL"]
 CHECK_INTERVAL = 300  # 5 minutes (avoid rate limits)
 
 # Discord Webhook URL
-DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1530629908290605126/_s41YhRHLncmwGa633DbKUBkYhL4tvOFJfzTOjQGdmfvd-cP5iJV1sRhxntXSTOgV32N"
-
+import os
+DISCORD_WEBHOOK = os.environ.get('DISCORD_WEBHOOK_URL')
 # ================= DISCORD ALERT FUNCTION =================
 def send_discord_alert(message):
     """Send alert to Discord channel via webhook"""
